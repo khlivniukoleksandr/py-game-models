@@ -23,8 +23,9 @@ def main() -> None:
                     defaults={"description": player["guild"]
                               .get("description", "")}
                 )
+            guild = None
             Player.objects.get_or_create(
-                nickname=player["bio"].split(",")[0],
+                nickname=player["nickname"],
                 defaults={"email": player["email"],
                           "bio": player.get("bio", ""),
                           "race": race,
